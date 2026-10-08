@@ -23,6 +23,20 @@ The setup command writes `.env.local`. Public app variables are validated in
 
 ## iOS
 
+Build a development client for your iPhone:
+
+```sh
+bun run build:ios
+```
+
+Follow the Apple sign-in and device registration prompts on the first build
+(requires a paid Apple Developer account). Open the install link on your iPhone,
+enable Developer Mode, then run `bun start` and scan the Expo QR code.
+Keep your Mac and iPhone on the same network. Rebuild after native dependency
+or app configuration changes.
+
+For a local simulator build:
+
 ```sh
 bun ios
 ```

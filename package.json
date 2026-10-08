@@ -44,6 +44,7 @@
     "start": "concurrently --raw --kill-others --kill-signal SIGINT \"expo start\" \"convex dev\"",
     "android": "expo run:android",
     "ios": "expo run:ios",
+    "build:ios": "bun x eas-cli@24.12.0 build --platform ios --profile development",
     "web": "expo start --web",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix"
