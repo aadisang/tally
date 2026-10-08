@@ -1,6 +1,8 @@
 import { ConvexProvider, ConvexReactClient } from "convex/react";
-import { Stack } from "expo-router";
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { useUniwind } from "uniwind";
 import { env } from "../env";
 import "../globals.css";
 
@@ -11,9 +13,14 @@ const convex = new ConvexReactClient(env.EXPO_PUBLIC_CONVEX_URL, {
 });
 
 export default function RootLayout() {
+  const { theme } = useUniwind();
+
   return (
     <ConvexProvider client={convex}>
-      <Stack />
+      <ThemeProvider value={theme === "dark" ? DarkTheme : DefaultTheme}>
+        <StatusBar style="auto" />
+        <Stack />
+      </ThemeProvider>
     </ConvexProvider>
   );
 }

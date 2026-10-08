@@ -35,6 +35,9 @@
           "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash.png",
           "imageWidth": 320,
+          "dark": {
+            "backgroundColor": "#000000"
+          },
           "android": {
             "image": "./assets/images/splash.png",
             "imageWidth": 320
